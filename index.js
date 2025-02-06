@@ -1,12 +1,12 @@
 // const express = require('express');
 import express from "express";
 import userRoute from "./router/userRoute.js";
-import { db } from "./database/db.js";
 
 const app = express();
+app.use(express.json());
 const port = 5000;
 
-app.use("/", userRoute); // /get-user
+app.use("/api", userRoute); // /get-user
 
 app.listen(port, () => {
   console.log("Server is running on port: ", port);
