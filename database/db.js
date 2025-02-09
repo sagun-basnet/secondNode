@@ -4,14 +4,13 @@ export const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "12345",
-  database: "test_database",
+  database: "new_schema",
 });
 
 db.connect((err) => {
   if (err) {
-    console.error("error connecting:", err);
-    return;
+    console.log("Database connection error: ", err);
   } else {
-    console.log("database connected");
+    console.log("Database connected.....");
   }
 });
