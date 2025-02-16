@@ -33,6 +33,6 @@ export const insertUser = (req, res) => {
     if (err) {
       res.send(err);
     }
-    res.send(result);
+    res.send({ result, message: "User inserted successfully" });
   });
 };
