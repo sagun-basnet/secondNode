@@ -31,8 +31,8 @@ export const insertUser = (req, res) => {
 
   db.query(q, [name, email, password], (err, result) => {
     if (err) {
-      res.send(err);
+      return res.send(err);
     }
-    res.send({ result, message: "User inserted successfully" });
+    return res.send({ result, message: "User inserted successfully" });
   });
 };
