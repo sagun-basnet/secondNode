@@ -26,6 +26,8 @@ import { db } from "../database/db.js";
 
 export const insertUser = (req, res) => {
   const { name, email, password } = req.body;
+  const file = req.files;
+  console.log(`${file[0].destination}/${file[0].filename}`);
 
   const q = "insert into user(name, email, password) values(?,?,?)";
 
